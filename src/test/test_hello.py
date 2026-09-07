@@ -5,11 +5,13 @@ message = {"hello"}
 
 #Run
 def hello():
-    response = requests.get("http://localhost:5000/hello")
+    response = requests.get("http://127.0.0.1:5000/hello")
     responsejson = response.status_code
-    return
+    print(responsejson)
+    return responsejson
 
 
 def test_hello_code():
-    assert hello() == "200"
+    assert hello() == 200
 
+test_hello_code()
