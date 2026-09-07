@@ -1,14 +1,15 @@
 import requests
+import pytest
 #Initalize
 message = {"hello"}
 
 #Run
-def test_hallo():
+def hello():
     response = requests.get("http://localhost:5000/hello")
-    return response
-response = test_hallo()
-#Assert
-responsejson = response.json()
+    responsejson = response.status_code
+    return
 
 
-assert responsejson['message'] == "200"
+def test_hello_code():
+    assert hello() == "200"
+
